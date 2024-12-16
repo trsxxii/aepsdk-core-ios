@@ -53,6 +53,10 @@ class LoggingService: Logging {
     // MARK: Logging
 
     func log(level: LogLevel, label: String, message: String) {
-        os_log("%@", log: osLog("AEP SDK \(level.toString()) - <\(label)>"), type: osLogType(level), message)
+        if #available(iOS 14.0, *) {
+            os_log(osLogType(level), log: osLog("AEP SDK \(level.toString()) - <\(label)>"), "\(message, privacy: .public)")
+        } else {
+            os_log("%@", log: osLog("AEP SDK \(level.toString()) - <\(label)>"), type: osLogType(level), message)
+        }
     }
 }
