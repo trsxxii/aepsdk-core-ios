@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AEPCore"
-  s.version          = "5.3.1"
+  s.version          = "5.3.2"
 
   s.summary          = "Core library for Adobe Experience Platform Mobile SDK. Written and maintained by Adobe."
   s.description      = <<-DESC
